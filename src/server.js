@@ -10,7 +10,7 @@ const http = require('http');
 function createServer() {
   const server = http.createServer((req, res) => {
     /* Aquí la lógica del enrutador */
-    const headers = { 'Content-Type': 'text/plain; charset=utf-8' }; //Definimos los encabezados que usaremos en todas las rutas
+    const headers = { 'Content-Type': 'text/plain; charset=utf-8' };
 
     if (req.url === '/') {
       res.writeHead(200, headers);
@@ -25,7 +25,6 @@ function createServer() {
       res.writeHead(200, headers);
       res.end('Si querés contactarnos, hacelo a este Email: :)');
     } else {
-      //cualquier otra ruta
       res.writeHead(404, headers);
       res.end('No se ha encontrado la ruta ingresada.');
     }
